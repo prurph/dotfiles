@@ -5,12 +5,17 @@
 call plug#begin('~/.config/nvim/plugged')
   Plug 'chriskempson/base16-vim'
   Plug 'haya14busa/incsearch.vim'
+  Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-surround'
 call plug#end()
 
 " Plugin Settings
 " haya14busa/incsearch.vim for automatic removal of search highlighting
 set hlsearch
 let g:incsearch#auto_nohlsearch = 1
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 map n  <Plug>(incsearch-nohl-n)
 map N  <Plug>(incsearch-nohl-N)
 map *  <Plug>(incsearch-nohl-*)
