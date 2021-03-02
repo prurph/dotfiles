@@ -76,9 +76,14 @@ URxvt.iso14755_52: false
 ! Font
 ! Check fonts with fc-list -v | grep and use the "family" name
 ! Open a single urxvt window with a given font: 
-!   $ urxvt -fn "xft:FiraCode Nerd Font:size=12"
-URxvt*font:         xft:FiraCode Nerd Font:size=12:antialias=true
-URxvt*letterSpace: -1
+!   $ urxvt -fn "xft:DejaVuSansMono Nerd Font:pixelsize=12"
+! Note that the nerd fonts are finicky: too small a font will result in the
+! little prompt arrow showing up as a box. Also it seems like it is more
+! reliable to log out/in rather than trying to merge configs or invoke
+! urxvt directly as above
+URxvt*font:         xft:FiraCode Nerd Font:size=12:pixelsize=14:antialias=true
+! The below line will break certain glyphs depending on the font.
+! URxvt*letterSpace: -1
 
 ! Appearance
 URxvt*borderLess:     false

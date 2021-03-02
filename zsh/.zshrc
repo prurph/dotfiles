@@ -34,6 +34,7 @@ bindkey "^N" down-line-or-search
 bindkey "^P" up-line-or-search
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
+bindkey "^?" backward-delete-char
 
 source "$XDG_CONFIG_HOME/zsh/aliases"
 source "$XDG_CONFIG_HOME/zsh/scripts"

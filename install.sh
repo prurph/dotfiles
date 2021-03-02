@@ -1,33 +1,42 @@
 #!/bin/bash
+if !([[ $XDG_CONFIG_HOME ]]) || !([[ $DOTFILES ]]); then
+  echo "\$XDG_CONFIG_HOME or \$DOTFILES empty. Abort."
+  exit 1
+fi
+
+# *** fonts
+mkdir -p "$XDG_DATA_HOME"
+cp -rf "$DOTFILES/fonts" "$XDG_DATA_HOME"
 
 # *** nvim
-mkdir -p "$HOME/.config/nvim"
-mkdir -p "$HOME/.config/nvim/undo"
-ln -sf "$HOME/dotfiles/nvim/init.vim" "$HOME/.config/nvim/init.vim"
+mkdir -p "$XDG_CONFIG_HOME/nvim"
+mkdir -p "$XDG_CONFIG_HOME/nvim/undo"
+ln -sf "$DOTFILES/nvim/init.vim" "$XDG_CONFIG_HOME/nvim/init.vim"
 
 # *** X11
 # To symlink entire directory, must ensure it doesn't exist
-rm -rf "$HOME/.config/X11"
-ln -s "$HOME/dotfiles/X11" "$HOME/.config"
+rm -rf "$XDG_CONFIG_HOME/X11"
+ln -s "$DOTFILES/X11" "$XDG_CONFIG_HOME"
 
 # *** i3
-rm -rf "$HOME/.config/i3"
-ln -s "$HOME/dotfiles/i3" "$HOME/.config"
+rm -rf "$XDG_CONFIG_HOME/i3"
+ln -s "$DOTFILES/i3" "$XDG_CONFIG_HOME"
 
 # *** zsh
-BASE16_SHELL="$HOME/.config/base16-shell"
+BASE16_SHELL="$XDG_CONFIG_HOME/base16-shell"
 rm -rf "$BASE16_SHELL"
 git clone https://github.com/chriskempson/base16-shell.git $BASE16_SHELL
 source "$BASE16_SHELL/scripts/base16-ocean.sh"
 
-ZSH_SNAP="$HOME/.config/zsh/zsh-snap"
+ZSH_SNAP="$XDG_CONFIG_HOME/zsh/zsh-snap"
 rm -rf $ZSH_SNAP
 git clone --depth 1 https://github.com/marlonrichert/zsh-snap.git $ZSH_SNAP
 
-mkdir -p "$HOME/.config/zsh"
-ln -sf "$HOME/dotfiles/zsh/.zshenv" "$HOME"
-ln -sf "$HOME/dotfiles/zsh/.zshrc" "$HOME/.config/zsh"
-ln -sf "$HOME/dotfiles/zsh/aliases" "$HOME/.config/zsh/aliases"
-ln -sf "$HOME/dotfiles/zsh/scripts" "$HOME/.config/zsh/scripts"
-rm -rf "$HOME/.config/zsh/external"
-ln -sf "$HOME/dotfiles/zsh/external" "$HOME/.config/zsh"
+mkdir -p "$XDG_CONFIG_HOME/zsh"
+ln -sf "$DOTFILES/zsh/.zshenv" "$HOME"
+ln -sf "$DOTFILES/zsh/.zshrc" "$XDG_CONFIG_HOME/zsh"
+ln -sf "$DOTFILES/zsh/aliases" "$XDG_CONFIG_HOME/zsh/aliases"
+ln -sf "$DOTFILES/zsh/scripts" "$XDG_CONFIG_HOME/zsh/scripts"
+rm -rf "$XDG_CONFIG_HOME/zsh/external"
+ln -sf "$DOTFILES/zsh/external" "$XDG_CONFIG_HOME/zsh"
+
