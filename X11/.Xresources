@@ -74,7 +74,10 @@ URxvt.iso14755:    false
 URxvt.iso14755_52: false
 
 ! Font
-URxvt*font:         xft:DejaVuSansMono:size=12:antialias=true
+! Check fonts with fc-list -v | grep and use the "family" name
+! Open a single urxvt window with a given font: 
+!   $ urxvt -fn "xft:FiraCode Nerd Font:size=12"
+URxvt*font:         xft:FiraCode Nerd Font:size=12:antialias=true
 URxvt*letterSpace: -1
 
 ! Appearance

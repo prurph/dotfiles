@@ -1,0 +1,6 @@
+#!/bin/zsh
+
+# Write some functions/scripts in here
+watermelon() {
+  echo "WATERMELON!"
+}
