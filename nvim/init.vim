@@ -2,17 +2,19 @@
 
 " *** Plugins
 " vim-plug lives in ~/.config/nvim/autoload/plug.vim
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
   Plug 'chriskempson/base16-vim'
   Plug 'haya14busa/incsearch.vim'
+  Plug 'simnalamburt/vim-mundo'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
 
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'romgrk/barbar.nvim'
+
+  Plug 'chrisbra/csv.vim'
 call plug#end()
 
 " Plugin Settings
@@ -54,6 +56,16 @@ nnoremap <silent>    <A-9> :BufferLast<CR>
 " Close buffer
 nnoremap <silent>    <A-q> :BufferClose<CR>
 
+" chrisbra/csv.vim
+augroup filetype_csv
+  autocmd!
+  autocmd BufRead,BufWritePost *.csv :%ArrangeColumn!
+  autocmd BufWritePre *.csv :%UnArrangeColumn
+augroup END
+
+" simnalamburt/vim-mundo
+nnoremap <leader>u :MundoToggle<CR>
+
 set termguicolors
 let g:airline_theme='base16_shell'
 let g:airline_powerline_fonts=1
@@ -62,6 +74,7 @@ colorscheme base16-ocean
 " *** Options
 " Managing options
 " :set no<option>        Unset option
+
 " :set <otpion>!         Toggle option
 " :set <option>?         Get value
 " :set <option>=<value>  Set value
@@ -116,6 +129,7 @@ filetype indent on
 filetype plugin on
 
 " *** Keybinds
+nnoremap <space> <nop>
 let mapleader = " "
 
 " Registers
