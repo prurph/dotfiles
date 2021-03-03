@@ -28,7 +28,6 @@ rm -rf "$XDG_CONFIG_HOME/i3"
 ln -s "$DOTFILES/i3" "$XDG_CONFIG_HOME"
 
 # *** zsh
-
 ZSH_SNAP="$XDG_CONFIG_HOME/zsh/zsh-snap"
 rm -rf $ZSH_SNAP
 git clone --depth 1 https://github.com/marlonrichert/zsh-snap.git $ZSH_SNAP
@@ -44,3 +43,6 @@ ln -sf "$DOTFILES/zsh/external" "$XDG_CONFIG_HOME/zsh"
 # *** dunst
 mkdir -p "$XDG_CONFIG_HOME/dunst"
 ln -sf "$DOTFILES/dunst/dunstrc" "$XDG_CONFIG_HOME/dunst/dunstrc"
+
+# *** git
+source "$DOTFILES/git/config.sh"
