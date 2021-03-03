@@ -7,6 +7,12 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'haya14busa/incsearch.vim'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
+
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+
+  Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'romgrk/barbar.nvim'
 call plug#end()
 
 " Plugin Settings
@@ -24,13 +30,34 @@ map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 
+" romgrk/barbar.nvim
+nnoremap <silent> <C-s> :BufferPick<CR>
+" Sort automatically by...
+nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
+nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
+" Move to previous/next
+nnoremap <silent>    <A-,> :BufferPrevious<CR>
+nnoremap <silent>    <A-.> :BufferNext<CR>
+" Re-order to previous/next
+nnoremap <silent>    <A-<> :BufferMovePrevious<CR>
+nnoremap <silent>    <A->> :BufferMoveNext<CR>
+" Goto buffer in position...
+nnoremap <silent>    <A-1> :BufferGoto 1<CR>
+nnoremap <silent>    <A-2> :BufferGoto 2<CR>
+nnoremap <silent>    <A-3> :BufferGoto 3<CR>
+nnoremap <silent>    <A-4> :BufferGoto 4<CR>
+nnoremap <silent>    <A-5> :BufferGoto 5<CR>
+nnoremap <silent>    <A-6> :BufferGoto 6<CR>
+nnoremap <silent>    <A-7> :BufferGoto 7<CR>
+nnoremap <silent>    <A-8> :BufferGoto 8<CR>
+nnoremap <silent>    <A-9> :BufferLast<CR>
+" Close buffer
+nnoremap <silent>    <A-q> :BufferClose<CR>
 
-" base16-shell https://github.com/chriskempson/base16-shell
-" base16-vim
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
+set termguicolors
+let g:airline_theme='base16_shell'
+let g:airline_powerline_fonts=1
+colorscheme base16-ocean
 
 " *** Options
 " Managing options
@@ -48,6 +75,7 @@ set confirm
 set hidden
 
 set nobackup
+set noshowmode
 set noswapfile
 set undofile
 set undodir=$HOME/.config/nvim/undo
@@ -66,6 +94,7 @@ highlight ColorColumn ctermbg=0
 set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
   \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
   \,sm:block-blinkwait175-blinkoff150-blinkon175
+set cursorline
 
 " Line numbering
 set number relativenumber
@@ -144,3 +173,4 @@ vnoremap K :m '<-2<CR>gv=gv
 " *** ETC
 " Don't continue comment block from current line on nextline
 autocmd FileType * set formatoptions-=cro
+

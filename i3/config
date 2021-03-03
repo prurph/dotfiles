@@ -44,7 +44,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvtc
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -204,52 +204,52 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # *** Colors and Appearance
-# Define colors from ~/.config/X11/.Xresources
-set_from_resource $foreground  foreground
-set_from_resource $background  background
-set_from_resource $cursorColor cursorColor
-
-set_from_resource $black       color0
-set_from_resource $gray01      color18
-set_from_resource $gray02      color19
-set_from_resource $gray03      color8
-set_from_resource $gray04      color20
-set_from_resource $gray05      color7
-set_from_resource $gray06      color21
-set_from_resource $white       color15
-
-set_from_resource $red         color1
-set_from_resource $orange      color16
-set_from_resource $yellow      color3
-set_from_resource $green       color10
-set_from_resource $blue        color6
-set_from_resource $indigo      color4
-set_from_resource $violet      color5
-set_from_resource $brown       color17
+set $base00 #2b303b
+set $base01 #343d46
+set $base02 #4f5b66
+set $base03 #65737e
+set $base04 #a7adba
+set $base05 #c0c5ce
+set $base06 #dfe1e8
+set $base07 #eff1f5
+set $base08 #bf616a
+set $base09 #d08770
+set $base0A #ebcb8b
+set $base0B #a3be8c
+set $base0C #96b5b4
+set $base0D #8fa1b3
+set $base0E #b48ead
+set $base0F #ab7967
 
 hide_edge_borders both
 
-# class                 border   background  text     indicator  child_border  
-client.focused          $indigo  $indigo     $gray06  $indigo
-client.focused_inactive $gray01  $gray01     $gray03  $gray01
-client.unfocused        $gray01  $gray01     $gray03  $gray01   
-client.urgent           $red     $red        $gray06  $red      
+
+#                       border   background  text     indicator  child_border
+client.focused          $base05  $base0D     $base00  $base0D   $base0C
+client.focused_inactive $base01  $base01     $base05  $base03   $base01
+client.unfocused        $base01  $base01     $base03  $base01   $base01
+client.urgent           $base08  $base08     $base00  $base08   $base08
+client.placeholder      $base00  $base00     $base05  $base00   $base00
+client.background       $base07
 
 # Status Bar
 bar {
   status_command i3status --config ~/.config/i3/i3status.conf
+
   # disable tray icons
   tray_output none
+
   colors {
-    background $gray01
-    statusline $white
-    separator  $gray03
-    # entity           border       background  text
-    focused_workspace  $background  $green      $white
-    active_workspace   $background  $gray04     $white
-    inactive_workspace $background  $gray02     $gray04
-    urgent_workspace   $background  $red        $white
-    binding_mode       $background  $red        $white
+      background $base01
+      separator  $base03
+      statusline $base04
+
+      # entity            border   background  text
+      focused_workspace   $base05  $base0D     $base00
+      active_workspace    $base05  $base03     $base00
+      inactive_workspace  $base03  $base01     $base05
+      urgent_workspace    $base08  $base08     $base00
+      binding_mode        $base00  $base0A     $base00
   }
 }
 
@@ -272,10 +272,12 @@ for_window [class="Arandr"] floating enable
 
 # Scratchpads
 # If this named scratchpad is closed it can no longer be toggled and must
-# be recreated: $ i3 exec 'urxvtc -name urxvt_scratchpad'
-for_window [instance="urxvt_scratchpad"] move scratchpad, border pixel 2
-bindsym $mod+Shift+t [instance="urxvt_scratchpad"] scratchpad show
-exec urxvtc -name urxvt_scratchpad
+# be recreated: 
+#   $ i3 exec 'urxvtc -name urxvt_scratchpad'
+#   $ i3 exec 'alacritty --class alacritty_scratchpad'
+exec --no-start-up-id alacritty --class alacritty_scratch
+for_window [instance="alacritty_scratch"] move scratchpad, border pixel 2
+bindsym $mod+Shift+t [instance="alacritty_scratch"] scratchpad show
 # Marked scratchpads:
 #   https://www.reddit.com/r/i3wm/comments/2hqd7w/marks_scratchpad_awesome/
 #   https://i3wm.org/docs/userguide.html#vim_like_marks

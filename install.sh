@@ -23,10 +23,6 @@ rm -rf "$XDG_CONFIG_HOME/i3"
 ln -s "$DOTFILES/i3" "$XDG_CONFIG_HOME"
 
 # *** zsh
-BASE16_SHELL="$XDG_CONFIG_HOME/base16-shell"
-rm -rf "$BASE16_SHELL"
-git clone https://github.com/chriskempson/base16-shell.git $BASE16_SHELL
-source "$BASE16_SHELL/scripts/base16-ocean.sh"
 
 ZSH_SNAP="$XDG_CONFIG_HOME/zsh/zsh-snap"
 rm -rf $ZSH_SNAP
