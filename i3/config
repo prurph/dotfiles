@@ -275,9 +275,10 @@ for_window [class="Arandr"] floating enable
 # be recreated: 
 #   $ i3 exec 'urxvtc -name urxvt_scratchpad'
 #   $ i3 exec 'alacritty --class alacritty_scratchpad'
-exec --no-start-up-id alacritty --class alacritty_scratch
-for_window [instance="alacritty_scratch"] move scratchpad, border pixel 2
-bindsym $mod+Shift+t [instance="alacritty_scratch"] scratchpad show
+# Note alacritty uses --class to specify what i3 considers its instance value
+for_window [class="Alacritty" instance="alacritty_scratch"] move scratchpad, border normal
+bindsym $mod+Shift+Tab [instance="alacritty_scratch"] scratchpad show
+exec --no-startup-id alacritty --class alacritty_scratch --title Scratch
 # Marked scratchpads:
 #   https://www.reddit.com/r/i3wm/comments/2hqd7w/marks_scratchpad_awesome/
 #   https://i3wm.org/docs/userguide.html#vim_like_marks

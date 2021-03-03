@@ -4,7 +4,7 @@
 # -q quiet       no welcome message
 # -o opendisplay keep daemon running at all times
 # -f fork        bind URxvt to its control socket
-urxvtd -o -q -f
+# urxvtd -o -q -f
 xrdb -merge ~/.config/X11/.Xresources
 
 # Key repeat: <delay> <repeats/sec>
