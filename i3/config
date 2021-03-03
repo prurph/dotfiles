@@ -279,3 +279,6 @@ exec urxvtc -name urxvt_scratchpad
 # Marked scratchpads:
 #   https://www.reddit.com/r/i3wm/comments/2hqd7w/marks_scratchpad_awesome/
 #   https://i3wm.org/docs/userguide.html#vim_like_marks
+
+# *** Notifications
+exec --no-startup-id dunst

@@ -40,3 +40,6 @@ ln -sf "$DOTFILES/zsh/scripts" "$XDG_CONFIG_HOME/zsh/scripts"
 rm -rf "$XDG_CONFIG_HOME/zsh/external"
 ln -sf "$DOTFILES/zsh/external" "$XDG_CONFIG_HOME/zsh"
 
+# *** dunst
+mkdir -p "$XDG_CONFIG_HOME/dunst"
+ln -sf "$DOTFILES/dunst/dunstrc" "$XDG_CONFIG_HOME/dunst/dunstrc"
