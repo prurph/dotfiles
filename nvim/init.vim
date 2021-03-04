@@ -66,7 +66,9 @@ augroup END
 " simnalamburt/vim-mundo
 nnoremap <leader>u :MundoToggle<CR>
 
-set termguicolors
+if (has("termguicolors"))
+  set termguicolors
+endif
 let g:airline_theme='base16_shell'
 let g:airline_powerline_fonts=1
 colorscheme base16-ocean

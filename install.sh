@@ -50,3 +50,11 @@ ln -sf "$DOTFILES/dunst/dunstrc" "$XDG_CONFIG_HOME/dunst/dunstrc"
 
 # *** git
 source "$DOTFILES/git/config.sh"
+
+# *** alacritty
+mkdir -p "$XDG_CONFIG_HOME/alacritty"
+ln -sf "$DOTFILES/alacritty/alacritty.yml" "$XDG_CONFIG_HOME/alacritty/alacritty.yml"
+
+# *** tmux
+mkdir -p "$XDG_CONFIG_HOME/tmux"
+ln -sf "$DOTFILES/tmux/tmux.conf" "$XDG_CONFIG_HOME/tmux/tmux.conf"

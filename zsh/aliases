@@ -1,7 +1,10 @@
 alias ls='ls -A --color=auto --sort=version'
-alias nvimrc="nvim $DOTFILES/nvim/init.vim"
 alias setsel='echo PRIMARY | xsel -ip; echo CLIPBOARD | xsel -ib'
 alias showsel='echo PRIMARY is $(xsel); echo CLIPBOARD is $(xsel -b)'
+
+# Open config files
+alias nvimrc="nvim $DOTFILES/nvim/init.vim"
+alias tmuxconf="nvim $DOTFILES/tmux/tmux.conf"
 alias zshrc="nvim $DOTFILES/zsh/.zshrc"
 
 alias d='dirs -v'
