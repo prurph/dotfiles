@@ -10,4 +10,6 @@ xrdb -merge ~/.config/X11/.Xresources
 # Key repeat: <delay> <repeats/sec>
 xset r rate 185 40
 
+xkbcomp -w0 -I$XDG_CONFIG_HOME/xkb $XDG_CONFIG_HOME/xkb/keymap/mykbd $DISPLAY
+
 exec i3

@@ -120,6 +120,7 @@ augroup END
 
 set incsearch
 set smartcase
+set wildignorecase
 
 syntax enable
 syntax on

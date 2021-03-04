@@ -8,6 +8,10 @@ fi
 mkdir -p "$XDG_DATA_HOME"
 cp -rf "$DOTFILES/fonts" "$XDG_DATA_HOME"
 
+# *** xkb
+rm -rf "$XDG_CONFIG_HOME/xkb"
+ln -s "$DOTFILES/xkb" "$XDG_CONFIG_HOME"
+
 # *** nvim
 mkdir -p "$XDG_CONFIG_HOME/nvim"
 mkdir -p "$XDG_CONFIG_HOME/nvim/undo"
