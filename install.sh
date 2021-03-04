@@ -57,5 +57,6 @@ ln -sf "$DOTFILES/alacritty/alacritty.yml" "$XDG_CONFIG_HOME/alacritty/alacritty
 
 # *** tmux
 mkdir -p "$XDG_CONFIG_HOME/tmux"
-rm -rf "$XDG_CONFIG_HOME/tmux"
-ln -s "$DOTFILES/tmux" "$XDG_CONFIG_HOME"
+ln -sf "$DOTFILES/tmux/tmux.conf" "$XDG_CONFIG_HOME/tmux/tmux.conf"
+ln -sf "$DOTFILES/tmux/tmuxline" "$XDG_CONFIG_HOME/tmux/tmuxline"
+[[ ! -d "$XDG_CONFIG_HOME/tmux/plugins/tpm" ]] && git clone https://github.com/tmux-plugins/tpm "$XDG_CONFIG_HOME/tmux/plugins/tpm"

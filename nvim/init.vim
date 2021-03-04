@@ -14,6 +14,7 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
   Plug 'edkolev/tmuxline.vim'
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'romgrk/barbar.nvim'
+  Plug 'christoomey/vim-tmux-navigator'
 
   Plug 'chrisbra/csv.vim'
 call plug#end()
@@ -92,7 +93,7 @@ colorscheme base16-ocean
 " :set <option>+=<value> Add value (number) or append value (string)
 set mouse=a
 set noerrorbells
-set updatetime=50
+set updatetime=75
 
 " Avoid 'No write since last change when moving between buffers'
 set confirm
@@ -181,12 +182,14 @@ nnoremap ^ 0
 " <C-w>v vertical split
 set splitbelow
 set splitright
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+if !exists(":TmuxNavigate*")
+  nnoremap <C-h> <C-w>h
+  nnoremap <C-j> <C-w>j
+  nnoremap <C-k> <C-w>k
+  nnoremap <C-l> <C-w>l
+endif
 " Split with ctrl-h for consistency with everything else
-nnoremap <silent> <C-w>h :sp<CR> 
+nnoremap <silent> <C-w>h :sp<CR>
 nnoremap <leader>= <C-w>=
 nnoremap <leader>- <C-w>_
 nnoremap <Right>   :vertical resize +5<CR>
