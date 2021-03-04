@@ -1,0 +1,28 @@
+# This tmux statusbar config was created by tmuxline.vim
+# on Thu, 04 Mar 2021
+
+# Commands to generate:
+#   1. Start vim in tmux with tmuxline.vim plugin enabled
+#   2. Configure tmuxline as desired, if at all
+#   3. Run `:TmuxlineSnapshot <snapshot-file>` to generate this file
+# Then in tmux.conf, `source <snapshot-file>`
+# More info: https://github.com/edkolev/tmuxline.vim#usage
+
+set -g status-justify "left"
+set -g status "on"
+set -g status-left-style "none"
+set -g message-command-style "fg=#a7adba,bg=#4f5b66"
+set -g status-right-style "none"
+set -g pane-active-border-style "fg=#a3be8c"
+set -g status-style "none,bg=#343d46"
+set -g message-style "fg=#a7adba,bg=#4f5b66"
+set -g pane-border-style "fg=#4f5b66"
+set -g status-right-length "100"
+set -g status-left-length "100"
+setw -g window-status-activity-style "none"
+setw -g window-status-separator ""
+setw -g window-status-style "none,fg=#a3be8c,bg=#343d46"
+set -g status-left "#[fg=#2b303b,bg=#a3be8c] #S #[fg=#a3be8c,bg=#343d46,nobold,nounderscore,noitalics]"
+set -g status-right "#[fg=#4f5b66,bg=#343d46,nobold,nounderscore,noitalics]#[fg=#a7adba,bg=#4f5b66] %Y-%m-%d  %H:%M #[fg=#a3be8c,bg=#4f5b66,nobold,nounderscore,noitalics]#[fg=#2b303b,bg=#a3be8c] #h "
+setw -g window-status-format "#[fg=#a3be8c,bg=#343d46] #I #[fg=#a3be8c,bg=#343d46] #W "
+setw -g window-status-current-format "#[fg=#343d46,bg=#4f5b66,nobold,nounderscore,noitalics]#[fg=#a7adba,bg=#4f5b66] #I #[fg=#a7adba,bg=#4f5b66] #W #[fg=#4f5b66,bg=#343d46,nobold,nounderscore,noitalics]"

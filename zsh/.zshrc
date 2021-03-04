@@ -30,6 +30,10 @@ bindkey "^P" up-line-or-search
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 bindkey "^?" backward-delete-char
+# ^L is used by tmux to move splits, rebind clear to ^G
+bindkey -r "^L"
+bindkey -r "^G"
+bindkey -s "^G" "clear\n"
 
 source "$XDG_CONFIG_HOME/zsh/aliases"
 source "$XDG_CONFIG_HOME/zsh/scripts"

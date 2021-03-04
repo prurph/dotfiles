@@ -57,4 +57,5 @@ ln -sf "$DOTFILES/alacritty/alacritty.yml" "$XDG_CONFIG_HOME/alacritty/alacritty
 
 # *** tmux
 mkdir -p "$XDG_CONFIG_HOME/tmux"
-ln -sf "$DOTFILES/tmux/tmux.conf" "$XDG_CONFIG_HOME/tmux/tmux.conf"
+rm -rf "$XDG_CONFIG_HOME/tmux"
+ln -s "$DOTFILES/tmux" "$XDG_CONFIG_HOME"

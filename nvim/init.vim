@@ -11,6 +11,7 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
 
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'edkolev/tmuxline.vim'
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'romgrk/barbar.nvim'
 
@@ -66,11 +67,19 @@ augroup END
 " simnalamburt/vim-mundo
 nnoremap <leader>u :MundoToggle<CR>
 
+" tmuxline will pull colors from vim-airline, but only once vim is started
+" to generate a persistent conf file, you can install the plugins, then:
+"   1. in vim, `:TmuxlineSnapshot <path-to-file>`
+"   2. in tmux.conf, `source <path-to-file>`
+"   3. don't enable the extension inside vim in that case (as below)
+if filereadable(expand("$XDG_CONFIG_HOME/tmux/tmuxline"))
+  let g:airline#extensions#tmuxline#enabled = 0
+endif
 if (has("termguicolors"))
   set termguicolors
 endif
 let g:airline_theme='base16_shell'
-let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts = 1
 colorscheme base16-ocean
 
 " *** Options
@@ -168,14 +177,16 @@ nnoremap ^ 0
 " Splits
 " Useful split commands
 " <C-w>r Rotate splits
+" <C-w>s horizontal split
+" <C-w>v vertical split
 set splitbelow
 set splitright
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-nnoremap <leader><leader>v :vsp<CR>
-nnoremap <leader><leader>h :sp<CR>
+" Split with ctrl-h for consistency with everything else
+nnoremap <silent> <C-w>h :sp<CR> 
 nnoremap <leader>= <C-w>=
 nnoremap <leader>- <C-w>_
 nnoremap <Right>   :vertical resize +5<CR>
