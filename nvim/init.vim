@@ -6,8 +6,11 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
   Plug 'chriskempson/base16-vim'
   Plug 'haya14busa/incsearch.vim'
   Plug 'simnalamburt/vim-mundo'
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
+  Plug 'jez/vim-superman'
 
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
@@ -19,11 +22,18 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
   Plug 'tmux-plugins/vim-tmux'
   Plug 'tmux-plugins/vim-tmux-focus-events'
 
+  Plug 'mboughaba/i3config.vim'
   Plug 'chrisbra/csv.vim'
 
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'wellle/tmux-complete.vim'
   Plug 'honza/vim-snippets'
+
+  Plug 'pangloss/vim-javascript'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'peitalin/vim-jsx-typescript'
+  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+  Plug 'jparise/vim-graphql'
 call plug#end()
 
 " Plugin Settings
@@ -97,6 +107,7 @@ let g:coc_global_extensions = [
   \ 'coc-css',
   \ 'coc-html',
   \ 'coc-json',
+  \ 'coc-prettier',
   \ 'coc-tsserver'
   \]
 set cmdheight=2
@@ -109,6 +120,16 @@ if has("patch-8.1.1564")
   set signcolumn=number
 else
   set signcolumn=yes
+endif
+
+" coc-prettier
+" https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
 endif
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -148,6 +169,12 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+" Hover tooltip
+" This can be automated, see: https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim#tool-tip-documentation-and-diagnostics
+" However I found this very annoying as it spews errors on language servers that
+" don't support doHover (the autocmds could be scoped to filetype)
+nnoremap <silent> gh :call CocActionAsync('doHover')<CR>
+
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
@@ -163,6 +190,7 @@ endfunction
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
+autocmd CursorHoldI * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
@@ -218,9 +246,9 @@ endif
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
 " Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+command! -nargs=? Fold :call CocAction('fold', <f-args>)
 " Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+command! -nargs=0 OR   :call CocAction('runCommand', 'editor.action.organizeImport')
 
 " *** Options
 " Managing options
@@ -233,6 +261,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 set mouse=a
 set noerrorbells
 set updatetime=50
+set inccommand=nosplit
 
 " Avoid 'No write since last change when moving between buffers'
 set confirm

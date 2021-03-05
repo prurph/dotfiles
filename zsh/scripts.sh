@@ -36,3 +36,12 @@ win_title() {
   fi
   echo -e "\e]0;$1\a"
 }
+
+# Use instead of vman binary: set nohidden avoids creating [No Name] buffer.
+vman() {
+  nvim -c "set nohidden" -c "SuperMan $*"
+
+  if [[ $? != 0 ]]; then
+    echo "No manual entry for $*"
+  fi
+}
