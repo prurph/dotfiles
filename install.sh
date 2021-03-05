@@ -64,3 +64,6 @@ ln -sf "$DOTFILES/tmux/tmuxline" "$XDG_CONFIG_HOME/tmux/tmuxline"
 # *** tmuxp
 mkdir -p "$XDG_CONFIG_HOME/tmuxp"
 ln -sf "$DOTFILES/tmuxp/scratchpad.yml" "$XDG_CONFIG_HOME/tmuxp/scratchpad.yml"
+
+# *** nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
