@@ -1,0 +1,15 @@
+session_name: tycs-prog
+start_directory: $HOME/ws/teach-yourself-cs/programming/
+
+options:
+  automatic-rename: off
+
+windows:
+  - window_name: sicp
+    layout: main-horizontal
+    panes:
+      - focus: true
+        shell_command:
+          - nvim -c "set filetype=scheme"
+      - racket -i -p dyoo/simply-scheme -l xrepl
+      -
