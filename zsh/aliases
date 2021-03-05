@@ -4,7 +4,8 @@ alias showsel='echo PRIMARY is $(xsel); echo CLIPBOARD is $(xsel -b)'
 
 # Open config files
 alias nvimrc="nvim $DOTFILES/nvim/init.vim"
-alias tmuxconf="nvim $DOTFILES/tmux/tmux.conf"
+alias tmuxc="nvim $DOTFILES/tmux/tmux.conf"
+alias tmuxpc="nvim $XDG_CONFIG_HOME/tmuxp"
 alias zshrc="nvim $DOTFILES/zsh/.zshrc"
 
 alias d='dirs -v'

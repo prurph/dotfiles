@@ -93,7 +93,7 @@ colorscheme base16-ocean
 " :set <option>+=<value> Add value (number) or append value (string)
 set mouse=a
 set noerrorbells
-set updatetime=75
+set updatetime=50
 
 " Avoid 'No write since last change when moving between buffers'
 set confirm
@@ -133,6 +133,7 @@ augroup END
 set incsearch
 set smartcase
 set wildignorecase
+set wildmode=longest,full
 
 syntax enable
 syntax on

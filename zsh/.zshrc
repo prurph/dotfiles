@@ -59,6 +59,10 @@ setopt PUSHD_SILENT
 
 unsetopt CASE_GLOB
 
+# FZF key bindings
+# ^R:    history search (as usual)
+# ^T:    files/directories (think _T_ree)
+# ALT-C: cd into directory
 if [[ $(command -v "fzf") ]]; then
   source /usr/share/fzf/completion.zsh
   source /usr/share/fzf/key-bindings.zsh
