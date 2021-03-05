@@ -267,7 +267,7 @@ exec --no-startup-id feh --no-fehbg --bg-fill ~/.config/i3/feh/utah.jpg
 #  class    (general identifier)
 #  instance (specific to some windows)
 # Access a window's class and instance by running `xprop | grep WM_CLASS`
-assign [class="firefox" instance="Navigator"] $ws1
+# assign [class="firefox" instance="Navigator"] $ws1
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
