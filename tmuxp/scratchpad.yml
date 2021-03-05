@@ -1,0 +1,8 @@
+session_name: scratchpad
+options:
+  automatic-rename: true
+
+windows:
+  - window_name: tmp-notes
+    panes:
+      - nvim +e /tmp/nvim-tmp.md

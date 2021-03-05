@@ -40,7 +40,7 @@ mkdir -p "$XDG_CONFIG_HOME/zsh"
 ln -sf "$DOTFILES/zsh/.zshenv" "$HOME"
 ln -sf "$DOTFILES/zsh/.zshrc" "$XDG_CONFIG_HOME/zsh"
 ln -sf "$DOTFILES/zsh/aliases" "$XDG_CONFIG_HOME/zsh/aliases"
-ln -sf "$DOTFILES/zsh/scripts" "$XDG_CONFIG_HOME/zsh/scripts"
+ln -sf "$DOTFILES/zsh/scripts.sh" "$XDG_CONFIG_HOME/zsh/scripts.sh"
 rm -rf "$XDG_CONFIG_HOME/zsh/external"
 ln -sf "$DOTFILES/zsh/external" "$XDG_CONFIG_HOME/zsh"
 
@@ -60,3 +60,7 @@ mkdir -p "$XDG_CONFIG_HOME/tmux"
 ln -sf "$DOTFILES/tmux/tmux.conf" "$XDG_CONFIG_HOME/tmux/tmux.conf"
 ln -sf "$DOTFILES/tmux/tmuxline" "$XDG_CONFIG_HOME/tmux/tmuxline"
 [[ ! -d "$XDG_CONFIG_HOME/tmux/plugins/tpm" ]] && git clone https://github.com/tmux-plugins/tpm "$XDG_CONFIG_HOME/tmux/plugins/tpm"
+
+# *** tmuxp
+mkdir -p "$XDG_CONFIG_HOME/tmuxp"
+ln -sf "$DOTFILES/tmuxp/scratchpad.yml" "$XDG_CONFIG_HOME/tmuxp/scratchpad.yml"

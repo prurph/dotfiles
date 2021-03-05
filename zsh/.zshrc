@@ -36,7 +36,7 @@ bindkey -r "^G"
 bindkey -s "^G" "clear\n"
 
 source "$XDG_CONFIG_HOME/zsh/aliases"
-source "$XDG_CONFIG_HOME/zsh/scripts"
+source "$XDG_CONFIG_HOME/zsh/scripts.sh"
 
 # History
 setopt APPEND_HISTORY
