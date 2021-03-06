@@ -1,4 +1,5 @@
 " *** init.vim
+let mapleader = " "
 
 " *** Plugins
 " vim-plug lives in ~/.config/nvim/autoload/plug.vim
@@ -287,7 +288,7 @@ command! -nargs=0 OR   :call CocAction('runCommand', 'editor.action.organizeImpo
 " :set <option>+=<value> Add value (number) or append value (string)
 set mouse=a
 set noerrorbells
-set updatetime=50
+set updatetime=100
 set inccommand=nosplit
 
 " Avoid 'No write since last change when moving between buffers'
@@ -338,8 +339,6 @@ filetype indent on
 filetype plugin on
 
 " *** Keybinds
-let mapleader = " "
-
 " Registers
 " Use system clipboard, on Linux:
 "   + is clipboard (ctrl-c/v in apps, ctrl+option+c/v in Urxvt)
@@ -413,7 +412,7 @@ hi CocWarningSign ctermfg=9 ctermbg=10 guifg=#d08770 guibg=#343d46
 hi CocInfoSign ctermfg=5 ctermbg=10 guifg=#b48ead guibg=#343d46
 hi CocHintSign ctermfg=2 ctermbg=10 guifg=#a3be8c guibg=#343d46
 " NB: alacritty doesn't support undercurl (shows as undelrine): https://github.com/alacritty/alacritty/issues/1628
-" but if that is implemented gui=undercurl term=undercurl might be cool.
+" but kitty does.
 hi CocErrorHighlight ctermfg=1 guifg=#bf616a gui=undercurl term=undercurl
 hi CocWarningHighlight ctermfg=9 guifg=#d08770 gui=undercurl term=undercurl
 hi CocInfoHighlight ctermfg=5 guifg=#b48ead gui=undercurl term=undercurl

@@ -19,7 +19,7 @@ set $hyper Mod3
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:FiraCode Nerd Font 12
+font pango:JetBrains Mono 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -47,7 +47,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -279,9 +279,9 @@ for_window [class="Arandr"] floating enable
 #   $ i3 exec 'urxvtc -name urxvt_scratchpad'
 #   $ i3 exec 'alacritty --class alacritty_scratchpad'
 # Note alacritty uses --class to specify what i3 considers its instance value
-for_window [class="Alacritty" instance="alacritty_scratch"] move scratchpad, border none
-bindsym $mod+Shift+Tab [instance="alacritty_scratch"] scratchpad show
-exec --no-startup-id alacritty --class alacritty_scratch --title Scratch -e tmuxp load scratchpad
+for_window [instance="kitty_scratch"] move scratchpad, border none
+bindsym $mod+Shift+Tab [instance="kitty_scratch"] scratchpad show
+exec --no-startup-id kitty --class kitty_scratch --title Scratch -e tmuxp load scratchpad
 # Marked scratchpads:
 #   https://www.reddit.com/r/i3wm/comments/2hqd7w/marks_scratchpad_awesome/
 #   https://i3wm.org/docs/userguide.html#vim_like_marks

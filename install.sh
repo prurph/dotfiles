@@ -59,6 +59,10 @@ source "$DOTFILES/git/config.sh"
 mkdir -p "$XDG_CONFIG_HOME/alacritty"
 ln -sf "$DOTFILES/alacritty/alacritty.yml" "$XDG_CONFIG_HOME/alacritty/alacritty.yml"
 
+# *** kitty
+mkdir -p "$XDG_CONFIG_HOME/kitty"
+ln -sf "$DOTFILES/kitty/kitty.conf" "$XDG_CONFIG_HOME/kitty/kitty.conf"
+
 # *** tmux
 mkdir -p "$XDG_CONFIG_HOME/tmux"
 ln -sf "$DOTFILES/tmux/tmux.conf" "$XDG_CONFIG_HOME/tmux/tmux.conf"
@@ -68,6 +72,7 @@ ln -sf "$DOTFILES/tmux/tmuxline" "$XDG_CONFIG_HOME/tmux/tmuxline"
 # *** tmuxp
 mkdir -p "$XDG_CONFIG_HOME/tmuxp"
 ln -sf "$DOTFILES/tmuxp/scratchpad.yml" "$XDG_CONFIG_HOME/tmuxp/scratchpad.yml"
+ln -sf "$DOTFILES/tmuxp/tycs-prog.yml" "$XDG_CONFIG_HOME/tmuxp/tycs-prog.yml"
 
 # *** nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
