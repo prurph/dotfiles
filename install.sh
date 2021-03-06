@@ -1,8 +1,8 @@
 #!/bin/bash
-if !([[ $XDG_CONFIG_HOME ]]) || !([[ $DOTFILES ]]); then
-  echo "\$XDG_CONFIG_HOME or \$DOTFILES empty. Abort."
-  exit 1
-fi
+set -u
+: "$XDG_CONFIG_HOME"
+: "$DOTFILES"
+: "$NVIM_LISPWORDS"
 
 # *** fonts
 mkdir -p "$XDG_DATA_HOME"
@@ -19,6 +19,9 @@ ln -sf "$DOTFILES/nvim/init.vim" "$XDG_CONFIG_HOME/nvim/init.vim"
 ln -sf "$DOTFILES/nvim/coc-settings.json" "$XDG_CONFIG_HOME/nvim/coc-settings.json"
 [[ ! -f "$DOTFILES/nvim/autoload/plug.vim" ]] \
   && curl -fLo "$DOTFILES/nvim/autoload/plug.vim" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+mkdir -p "$HOME/bin"
+ln -sf "$DOTFILES/nvim/scmindent/scmindent.lua" "$HOME/bin/scmindent.lua"
+ln -sf "$DOTFILES/nvim/scmindent/.lispwords.lua" "$NVIM_LISPWORDS"
 mkdir -p "$XDG_CONFIG_HOME/nvim/autoload"
 ln -sf "$DOTFILES/nvim/autoload/plug.vim" "$XDG_CONFIG_HOME/nvim/autoload/plug.vim"
 nvim --noplugin +PlugUpdate +qa

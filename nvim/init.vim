@@ -100,6 +100,11 @@ let g:airline_theme='base16_shell'
 let g:airline_powerline_fonts = 1
 colorscheme base16-ocean
 
+" scmindent
+" https://github.com/ds26gte/scmindent
+" https://crash.net.nz/posts/2014/08/configuring-vim-for-sicp/
+autocmd filetype lisp,scheme,art setlocal equalprg=scmindent.lua
+
 " coc.nvim
 " There are many other commands I don't have bound.
 let g:coc_global_extensions = [
@@ -196,7 +201,7 @@ autocmd CursorHoldI * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
+vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
