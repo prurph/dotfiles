@@ -407,8 +407,6 @@ autocmd FileType * set formatoptions-=cro
 " :hi CursorLineNR          see specific highlight groups
 " :verbose hi CursorLineNR  see what is setting highlight group
 
-" NB: alacritty doesn't support undercurl (shows as undelrine): https://github.com/alacritty/alacritty/issues/1628
-" but if that is implemented gui=undercurl term=undercurl might be cool.
 " Set colors of signs in the gutter; backgrounds match base16-ocean gutter.
 hi CocErrorSign ctermfg=1 ctermbg=10 guifg=#bf616a guibg=#343d46
 hi CocWarningSign ctermfg=9 ctermbg=10 guifg=#d08770 guibg=#343d46
@@ -418,8 +416,7 @@ hi CocHintSign ctermfg=2 ctermbg=10 guifg=#a3be8c guibg=#343d46
 " but kitty does.
 " The error highlight looks a little janky b/c it conflicts with some some other
 " error diplay--eg for invalid JSON--and so I've overriden the background too.
-" Ideally, just define the colored undercurl if  we can figure out how to only
-" have coc display the errors and not whatever else is going on.
+" Could override the specific syntax error highlight groups.
 hi CocErrorHighlight ctermfg=1 ctermbg=0 guifg=#bf616a guibg=#2b303b gui=undercurl term=undercurl
 hi CocWarningHighlight ctermfg=9 ctermbg=0 guifg=#d08770 guibg=#2b303b gui=undercurl term=undercurl
 hi CocInfoHighlight ctermfg=5 ctermbg=0 guifg=#b48ead guibg=#2b303b gui=undercurl term=undercurl
