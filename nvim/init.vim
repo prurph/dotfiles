@@ -109,7 +109,10 @@ endif
 if (has("termguicolors"))
   set termguicolors
 endif
-let g:airline_theme='base16_shell'
+
+" TODO: remap warning to orange instead of red (differentiate from error).
+" see: https://github.com/EvanPurkhiser/dots-personal/commit/cf5e1654c96f07471bf784f25905e56d771f28d9#diff-a332aab47b5a34460552ff4aad4d38a80dc9c39f5346ea466c0afa9907708260
+let g:airline_theme = 'base16'
 let g:airline_powerline_fonts = 1
 colorscheme base16-ocean
 
@@ -136,7 +139,7 @@ let g:coc_global_extensions = [
   \ 'coc-markdownlint',
   \ 'coc-prettier',
   \ 'coc-tsserver'
-  \]
+  \ ]
 set cmdheight=2
 " Don't pass messages to |ins-completion-menu|
 set shortmess+=c
@@ -413,7 +416,11 @@ hi CocInfoSign ctermfg=5 ctermbg=10 guifg=#b48ead guibg=#343d46
 hi CocHintSign ctermfg=2 ctermbg=10 guifg=#a3be8c guibg=#343d46
 " NB: alacritty doesn't support undercurl (shows as undelrine): https://github.com/alacritty/alacritty/issues/1628
 " but kitty does.
-hi CocErrorHighlight ctermfg=1 guifg=#bf616a gui=undercurl term=undercurl
-hi CocWarningHighlight ctermfg=9 guifg=#d08770 gui=undercurl term=undercurl
-hi CocInfoHighlight ctermfg=5 guifg=#b48ead gui=undercurl term=undercurl
-hi CocHintHighlight ctermfg=2 guifg=#a3be8c gui=undercurl term=undercurl
+" The error highlight looks a little janky b/c it conflicts with some some other
+" error diplay--eg for invalid JSON--and so I've overriden the background too.
+" Ideally, just define the colored undercurl if  we can figure out how to only
+" have coc display the errors and not whatever else is going on.
+hi CocErrorHighlight ctermfg=1 ctermbg=0 guifg=#bf616a guibg=#2b303b gui=undercurl term=undercurl
+hi CocWarningHighlight ctermfg=9 ctermbg=0 guifg=#d08770 guibg=#2b303b gui=undercurl term=undercurl
+hi CocInfoHighlight ctermfg=5 ctermbg=0 guifg=#b48ead guibg=#2b303b gui=undercurl term=undercurl
+hi CocHintHighlight ctermfg=2 ctermbg=0 guifg=#a3be8c guibg=#2b303b gui=undercurl term=undercurl
