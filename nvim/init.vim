@@ -21,9 +21,11 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'tmux-plugins/vim-tmux'
   Plug 'tmux-plugins/vim-tmux-focus-events'
+  Plug 'jgdavey/tslime.vim'
 
   Plug 'mboughaba/i3config.vim'
   Plug 'chrisbra/csv.vim'
+  Plug 'vim-scripts/paredit.vim'
 
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'wellle/tmux-complete.vim'
@@ -104,6 +106,14 @@ colorscheme base16-ocean
 " https://github.com/ds26gte/scmindent
 " https://crash.net.nz/posts/2014/08/configuring-vim-for-sicp/
 autocmd filetype lisp,scheme,art setlocal equalprg=scmindent.lua
+
+" tslime
+let g:tslime_always_current_session = 1
+let g:tslime_always_current_window = 1
+
+vmap <leader>x <Plug>SendSelectionToTmux
+nmap <leader>x <Plug>NormalModeSendToTmux
+nmap <leader><leader>x <Plug>SetTmuxVars
 
 " coc.nvim
 " There are many other commands I don't have bound.

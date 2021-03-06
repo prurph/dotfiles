@@ -5,6 +5,16 @@
             "args": ["start"],
             "filetypes": ["sh"],
             "ignoredRootPaths": ["~"]
+        },
+        "racket": {
+            "command": "racket",
+            "args": [
+              "--lib",
+              "racket-langserver"
+            ],
+            "filetypes": [
+              "scheme"
+            ]
         }
     },
     "diagnostic.enable": false,
