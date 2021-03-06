@@ -17,6 +17,10 @@
             ]
         }
     },
-    "diagnostic.enable": false,
+    "diagnostic.enable": true,
+    "diagnostic.errorSign": "✖",
+    "diagnostic.warningSign": "●",
+    "diagnostic.infoSign": "●",
+    "diagnostic.hintSign": "●",
     "prettier.disableSuccessMessage": true
 }

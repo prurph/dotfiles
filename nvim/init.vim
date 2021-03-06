@@ -39,6 +39,16 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
 call plug#end()
 
 " Plugin Settings
+" vim-markdown (included)
+let g:markdown_fenced_languages = [
+  \ 'bash=sh',
+  \ 'css',
+  \ 'html',
+  \ 'java',
+  \ 'python',
+  \ 'ruby',
+  \ 'scala',
+  \]
 " haya14busa/incsearch.vim for automatic removal of search highlighting
 set hlsearch
 let g:incsearch#auto_nohlsearch = 1
@@ -122,6 +132,7 @@ let g:coc_global_extensions = [
   \ 'coc-css',
   \ 'coc-html',
   \ 'coc-json',
+  \ 'coc-markdownlint',
   \ 'coc-prettier',
   \ 'coc-tsserver'
   \]
@@ -204,6 +215,7 @@ function! s:show_documentation()
 endfunction
 
 " Highlight the symbol and its references when holding the cursor.
+" Requires coc-highlight
 autocmd CursorHold * silent call CocActionAsync('highlight')
 autocmd CursorHoldI * silent call CocActionAsync('highlight')
 
@@ -326,7 +338,6 @@ filetype indent on
 filetype plugin on
 
 " *** Keybinds
-nnoremap <space> <nop>
 let mapleader = " "
 
 " Registers
@@ -389,3 +400,21 @@ vnoremap K :m '<-2<CR>gv=gv
 " Don't continue comment block from current line on nextline
 autocmd FileType * set formatoptions-=cro
 
+" Style overrides. Cool notes:
+" :hi                       see all highlight groups
+" :hi CursorLineNR          see specific highlight groups
+" :verbose hi CursorLineNR  see what is setting highlight group
+
+" NB: alacritty doesn't support undercurl (shows as undelrine): https://github.com/alacritty/alacritty/issues/1628
+" but if that is implemented gui=undercurl term=undercurl might be cool.
+" Set colors of signs in the gutter; backgrounds match base16-ocean gutter.
+hi CocErrorSign ctermfg=1 ctermbg=10 guifg=#bf616a guibg=#343d46
+hi CocWarningSign ctermfg=9 ctermbg=10 guifg=#d08770 guibg=#343d46
+hi CocInfoSign ctermfg=5 ctermbg=10 guifg=#b48ead guibg=#343d46
+hi CocHintSign ctermfg=2 ctermbg=10 guifg=#a3be8c guibg=#343d46
+" NB: alacritty doesn't support undercurl (shows as undelrine): https://github.com/alacritty/alacritty/issues/1628
+" but if that is implemented gui=undercurl term=undercurl might be cool.
+hi CocErrorHighlight ctermfg=1 guifg=#bf616a gui=undercurl term=undercurl
+hi CocWarningHighlight ctermfg=9 guifg=#d08770 gui=undercurl term=undercurl
+hi CocInfoHighlight ctermfg=5 guifg=#b48ead gui=undercurl term=undercurl
+hi CocHintHighlight ctermfg=2 guifg=#a3be8c gui=undercurl term=undercurl
