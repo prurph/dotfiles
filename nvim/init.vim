@@ -124,6 +124,7 @@ autocmd filetype lisp,scheme,art setlocal equalprg=scmindent.lua
 " tslime
 let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
+let g:tsline_ensure_trailing_newlines = 1
 
 vmap <leader>x <Plug>SendSelectionToTmux
 nmap <leader>x <Plug>NormalModeSendToTmux
@@ -292,7 +293,6 @@ command! -nargs=0 OR   :call CocAction('runCommand', 'editor.action.organizeImpo
 set mouse=a
 set noerrorbells
 set updatetime=100
-set inccommand=nosplit
 
 " Avoid 'No write since last change when moving between buffers'
 set confirm
@@ -350,15 +350,14 @@ filetype plugin on
 nnoremap <leader>y "+y
 nnoremap <leader>p "+p
 vnoremap <leader>y "+y
-" Don't overwrite clipboard when replacing in VISUAL
-nnoremap <leader>p "+p
+vnoremap <leader>p "+p
 " Deletes don't overwrite register, except dd
 " TODO: find a better key for this. S would be good but vim-sneak uses it.
-nnoremap d "_d
-nnoremap D "_D
-vnoremap D "_D
+" nnoremap d "_d
+" nnoremap D "_D
+" vnoremap D "_D
 " Leave dd as it is
-nnoremap dd dd
+" nnoremap dd dd
 
 " Movement
 " Move by wrapped lines unless count provided
