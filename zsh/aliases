@@ -10,3 +10,5 @@ alias zshrc="nvim $DOTFILES/zsh/.zshrc"
 
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
+
+alias man='echo "Why not try vim-superman (vman) instead?"; sleep 2 && man'
