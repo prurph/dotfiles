@@ -27,6 +27,7 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
   Plug 'mboughaba/i3config.vim'
   Plug 'chrisbra/csv.vim'
   Plug 'vim-scripts/paredit.vim'
+  Plug 'junegunn/rainbow_parentheses.vim'
 
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'wellle/tmux-complete.vim'
@@ -63,6 +64,12 @@ map #  <Plug>(incsearch-nohl-#)
 " g* and g# find matches of word under current cursor even when part of a larger word
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
+
+" junegunn/rainbow_parentheses.vim'
+augroup rainbow_lisp
+  autocmd!
+  autocmd FileType lisp,clojure,scheme,racket RainbowParentheses
+augroup END
 
 " romgrk/barbar.nvim
 nnoremap <silent> <C-s> :BufferPick<CR>
