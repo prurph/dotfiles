@@ -50,6 +50,7 @@ let g:markdown_fenced_languages = [
   \ 'python',
   \ 'ruby',
   \ 'scala',
+  \ 'scheme',
   \]
 " haya14busa/incsearch.vim for automatic removal of search highlighting
 set hlsearch
@@ -184,11 +185,10 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use <c-space> to trigger completion.
 if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
+  inoremap <silent><expr> <C-space> coc#refresh()
 else
-  inoremap <silent><expr> <c-@> coc#refresh()
+  inoremap <silent><expr> <C-@> coc#refresh()
 endif
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
