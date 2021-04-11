@@ -1,26 +1,42 @@
 {
-    "languageserver": {
-        "bash": {
-            "command": "bash-language-server",
-            "args": ["start"],
-            "filetypes": ["sh"],
-            "ignoredRootPaths": ["~"]
-        },
-        "racket": {
-            "command": "racket",
-            "args": [
-              "--lib",
-              "racket-langserver"
-            ],
-            "filetypes": [
-              "scheme"
-            ]
-        }
+  "languageserver": {
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
     },
-    "diagnostic.enable": true,
-    "diagnostic.errorSign": "✖",
-    "diagnostic.warningSign": "●",
-    "diagnostic.infoSign": "●",
-    "diagnostic.hintSign": "●",
-    "prettier.disableSuccessMessage": true
+    "racket": {
+      "command": "racket",
+      "args": ["--lib", "racket-langserver"],
+      "filetypes": ["scheme"]
+    }
+  },
+  "diagnostic.enable": true,
+  "suggest.echodocSupport": true,
+  "suggest.maxCompleteItemCount": 20,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "javascriptreact"
+  ],
+  "eslint.filetypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact"
+  ],
+  "eslint.options": {
+    "env": {
+      "browser": true,
+      "node": true
+    }
+  },
+  "diagnostic.errorSign": "✖",
+  "diagnostic.warningSign": "•",
+  "diagnostic.infoSign": "•",
+  "diagnostic.hintSign": "•",
+  "prettier.disableSuccessMessage": true
 }

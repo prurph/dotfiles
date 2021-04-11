@@ -144,6 +144,7 @@ nmap <leader><leader>x <Plug>SetTmuxVars
 let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-css',
+  \ 'coc-eslint',
   \ 'coc-html',
   \ 'coc-json',
   \ 'coc-markdownlint',
