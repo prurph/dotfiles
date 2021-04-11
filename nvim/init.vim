@@ -8,6 +8,7 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
   Plug 'haya14busa/incsearch.vim'
   Plug 'simnalamburt/vim-mundo'
   Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
@@ -146,6 +147,7 @@ let g:coc_global_extensions = [
   \ 'coc-html',
   \ 'coc-json',
   \ 'coc-markdownlint',
+  \ 'coc-pairs',
   \ 'coc-prettier',
   \ 'coc-tsserver'
   \ ]
@@ -191,10 +193,24 @@ else
   inoremap <silent><expr> <C-@> coc#refresh()
 endif
 
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" Remap CR to take first completion entry if it's visible, otherwise to:
+"   <C-g>u          set undo scope (so undo goes back to here) :help i_CTRL-G_u
+"   <C-r>           paste from a register while in insert mode 
+"   =               the = (expression) register
+"   coc#on_enter()  the expression to paste (coc does some formatting, etc)
+" This whole thing goes in a function because to map an expression like the
+" else clause directly you'd normally do `inoremap <expr> ...` but
+" vim-endwise and other plugins that remap <CR> can't handle that. Using a
+" function avoids the need for the expression mapping. See: https://github.com/tpope/vim-endwise/issues/125#issuecomment-743921576
+function! s:coc_confirm() abort
+  if pumvisible()
+    return coc#_select_confirm()
+  else
+    return "\<C-g>u\<CR>\<C-r>=coc#on_enter()\<CR>"
+  endif
+endfunction
+" s:my_function defines script-local functions; to map them we must use <SID>
+inoremap <silent> <CR> <C-r>=<SID>coc_confirm()<CR>
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
