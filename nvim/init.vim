@@ -34,9 +34,9 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
   Plug 'wellle/tmux-complete.vim'
   Plug 'honza/vim-snippets'
 
-  Plug 'pangloss/vim-javascript'
-  Plug 'leafgarland/typescript-vim'
-  Plug 'peitalin/vim-jsx-typescript'
+  Plug 'HerringtonDarkholme/yats.vim'
+  Plug 'yuezk/vim-js'
+  Plug 'maxmellon/vim-jsx-pretty'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'jparise/vim-graphql'
 call plug#end()
