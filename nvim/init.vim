@@ -48,10 +48,12 @@ let g:markdown_fenced_languages = [
   \ 'css',
   \ 'html',
   \ 'java',
+  \ 'js=javascript',
   \ 'python',
   \ 'ruby',
   \ 'scala',
   \ 'scheme',
+  \ 'ts=typescript',
   \]
 " haya14busa/incsearch.vim for automatic removal of search highlighting
 set hlsearch
@@ -141,6 +143,7 @@ nmap <leader><leader>x <Plug>SetTmuxVars
 
 " coc.nvim
 " There are many other commands I don't have bound.
+" Configure coc with :CocConfig to open coc-config.json
 let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-css',
