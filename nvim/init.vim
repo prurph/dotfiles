@@ -135,7 +135,7 @@ autocmd filetype lisp,scheme,art setlocal equalprg=scmindent.lua
 " tslime
 let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
-let g:tsline_ensure_trailing_newlines = 1
+let g:tslime_ensure_trailing_newlines = 1
 
 vmap <leader>x <Plug>SendSelectionToTmux
 nmap <leader>x <Plug>NormalModeSendToTmux
@@ -166,6 +166,11 @@ if has("patch-8.1.1564")
 else
   set signcolumn=yes
 endif
+
+augroup coc_pairs_lisps
+  autocmd!
+  autocmd FileType lisp,clojure,scheme,racket let b:coc_pairs_disabled = ['(', "'"]
+augroup END
 
 " coc-prettier
 " https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim
