@@ -145,6 +145,11 @@ nmap <leader><leader>x <Plug>SetTmuxVars
 " coc.nvim
 " There are many other commands I don't have bound.
 " Configure coc with :CocConfig to open coc-config.json
+" Use :CocInstall and :CocUpdate
+" For language servers that aren't packaged with coc, add a config entry.
+" - racket
+"    - `raco pkg install racket-langserver` (https://github.com/jeapostrophe/racket-langserver)
+"    - If you see the error "racket-langserver has crashed ...", rerun the above
 let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-css',
