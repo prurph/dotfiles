@@ -12,6 +12,7 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-unimpaired'
   Plug 'jez/vim-superman'
 
   Plug 'vim-airline/vim-airline'
