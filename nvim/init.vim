@@ -435,6 +435,9 @@ nnoremap <Up>      :resize -5<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
+" Use Q to format a motion
+nnoremap Q gq
+
 " *** ETC
 " Don't continue comment block from current line on nextline
 autocmd FileType * set formatoptions-=cro
