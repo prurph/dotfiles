@@ -12,6 +12,11 @@ znap source zsh-users/zsh-completions
 znap source zdharma/fast-syntax-highlighting
 znap prompt denysdovhan/spaceship-prompt
 
+# Prevent fast-syntax-highlighting from reversing colors
+# https://github.com/zdharma/fast-syntax-highlighting/issues/105
+# https://github.com/zdharma/fast-syntax-highlighting/issues/170
+zle_highlight=('paste:none')
+
 # *** Vim Mode
 bindkey -v
 export KEYTIMEOUT=1
