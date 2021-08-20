@@ -47,6 +47,7 @@ ln -s "$DOTFILES/wofi" "$XDG_CONFIG_HOME"
 ZSH_SNAP="$XDG_CONFIG_HOME/zsh/zsh-snap"
 rm -rf $ZSH_SNAP
 git clone --depth 1 https://github.com/marlonrichert/zsh-snap.git $ZSH_SNAP
+source "$ZSH_SNAP/install.zsh"
 
 mkdir -p "$XDG_CONFIG_HOME/zsh"
 ln -sf "$DOTFILES/zsh/.zshenv" "$HOME"

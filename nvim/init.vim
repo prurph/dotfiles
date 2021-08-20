@@ -382,7 +382,7 @@ filetype plugin on
 " *** Keybinds
 " Registers
 " Use system clipboard, on Linux:
-"   + is clipboard (ctrl-c/v in apps, ctrl+option+c/v in Urxvt)
+"   + is clipboard (ctrl-c/v in apps, ctrl+option+c/v in Urxvt, ctrl+shift+c/v in Kitty)
 "   * is primary   (middle mouse)
 " I use leader y/p and clipboard so I can ctrl+[option+]c/v everywhere
 nnoremap <leader>y "+y
