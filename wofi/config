@@ -1,0 +1,11 @@
+allow_images=false
+prompt=
+show=drun
+location=center
+no_actions=true
+insensitive=true
+matching=fuzzy
+key_up=Control_L-k
+key_down=Control_L-j
+height=275
+width=475

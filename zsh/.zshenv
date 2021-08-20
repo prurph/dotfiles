@@ -23,3 +23,6 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_R_OPTS="--reverse"
 
 export NVIM_LISPWORDS="$XDG_CONFIG_HOME/nvim/.lispwords.lua"
+
+# For waybar trayvia lipappindicator
+export XDG_CURRENT_DESKTOP="Unity"

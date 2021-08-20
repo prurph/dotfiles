@@ -35,6 +35,14 @@ ln -s "$DOTFILES/X11" "$XDG_CONFIG_HOME"
 rm -rf "$XDG_CONFIG_HOME/i3"
 ln -s "$DOTFILES/i3" "$XDG_CONFIG_HOME"
 
+# *** sway
+rm -rf "$XDG_CONFIG_HOME/sway"
+ln -s "$DOTFILES/sway" "$XDG_CONFIG_HOME"
+
+# *** wofi (launcher)
+rm -rf "$XDG_CONFIG_HOME/wofi"
+ln -s "$DOTFILES/wofi" "$XDG_CONFIG_HOME"
+
 # *** zsh
 ZSH_SNAP="$XDG_CONFIG_HOME/zsh/zsh-snap"
 rm -rf $ZSH_SNAP

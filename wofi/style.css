@@ -1,0 +1,92 @@
+/* https://gist.github.com/frbor/84a356ab45cf2a0c1253a5aa86fe7f56 */
+/* 00 to 07: black to white */
+@define-color base00 #2b303b;
+@define-color base01 #343d46;
+@define-color base02 #4f5b66;
+@define-color base03 #65737e;
+@define-color base04 #a7adba;
+@define-color base05 #c0c5ce;
+@define-color base06 #dfe1e8;
+@define-color base07 #eff1f5;
+/* 08 to 0E: roy g biv */
+@define-color base08 #bf616a;
+@define-color base09 #d08770;
+@define-color base0A #ebcb8b;
+@define-color base0B #a3be8c;
+@define-color base0C #96b5b4;
+@define-color base0D #8fa1b3;
+@define-color base0E #b48ead;
+/* 0F: brown */
+@define-color base0F #ab7967;
+
+@define-color background @base01;
+
+* {
+  border-radius: 0;
+  min-height: 0;
+  padding: 0;
+  border: 0px;
+  outline: none;
+  transition: none;
+  box-shadow: none;
+  text-shadow: none;
+  font-family: "JetBrains Mono", monospace;
+}
+
+window {
+  opacity: 0.90;
+  background-color: @background;
+}
+
+#input {
+  margin-top: 10px;
+  border: none;
+  color: @base07;
+  background: transparent;
+  font-size: 18px;
+  min-height: 18px; /* Fixes "pixel pop down" of inner box when first letter entered */
+}
+
+#input > image {
+  color: rgba(0, 0, 0, 0);
+}
+
+#input > .left {
+  margin-right: -5px;
+}
+
+#inner-box {
+  margin: 10px;
+  border: none;
+  background-color: @background;
+}
+
+#outer-box {
+	margin: 0px;
+  border: none;
+  background-color: @background;
+}
+
+#scroll {
+  margin: 0px;
+  border: none;
+}
+
+#entry:selected {
+	background-color: @base0B;
+}
+
+#entry:selected > * {
+  background-color: @base0B;
+}
+
+#text {
+  margin: 5px;
+  border: none;
+  color: @base07;
+}
+
+#img {
+  background-color: transparent;
+  margin-right: 8px;
+}
