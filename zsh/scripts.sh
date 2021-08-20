@@ -16,7 +16,7 @@ ftmuxp() {
   fi
 
   # Omit scratchpad
-  workspaces="$(ls $XDG_CONFIG_HOME/tmuxp | sed -e 's#.yml$##' | grep -v scratchpad | sort)"
+  workspaces="$(tmuxp ls | grep -v scratchpad | sort)"
 
   create_new_session="(New Session)"
   workspaces=$(echo "${create_new_session}\n$workspaces")
