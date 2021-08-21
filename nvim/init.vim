@@ -35,6 +35,8 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
   Plug 'wellle/tmux-complete.vim'
   Plug 'honza/vim-snippets'
 
+  Plug 'sheerun/vim-polyglot'
+
   Plug 'HerringtonDarkholme/yats.vim'
   Plug 'yuezk/vim-js'
   Plug 'maxmellon/vim-jsx-pretty'
@@ -82,8 +84,10 @@ nnoremap <silent> <C-s> :BufferPick<CR>
 nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
 nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
 " Move to previous/next
-nnoremap <silent>    <A-,> :BufferPrevious<CR>
-nnoremap <silent>    <A-.> :BufferNext<CR>
+nnoremap <silent>    <A-,>   :BufferPrevious<CR>
+nnoremap <silent>    <A-.>   :BufferNext<CR>
+nnoremap <silent>    <Tab>   :BufferNext<CR>
+nnoremap <silent>    <S-Tab> :BufferPrevious<CR>
 " Re-order to previous/next
 nnoremap <silent>    <A-<> :BufferMovePrevious<CR>
 nnoremap <silent>    <A->> :BufferMoveNext<CR>
