@@ -6,10 +6,13 @@ options:
 
 windows:
   - window_name: sicp
-    layout: main-horizontal
+    layout: even-horizontal
     panes:
+      - racket -i -p dyoo/simply-scheme -l xrepl
       - focus: true
         shell_command:
-          - nvim -c "set filetype=scheme"
-      - racket -i -p dyoo/simply-scheme -l xrepl
-      -
+          - nvim .
+  - window_name: zsh
+    panes:
+      - shell_command:
+          - glol -3
