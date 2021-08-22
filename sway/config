@@ -29,7 +29,7 @@ set $menu wofi
 smart_gaps on
 gaps inner 5
 # Remove title bar of each window
-default_border pixel 1
+default_border pixel 2
 default_floating_border normal
 hide_edge_borders smart
 
