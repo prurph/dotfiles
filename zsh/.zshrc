@@ -44,9 +44,13 @@ source "$XDG_CONFIG_HOME/zsh/aliases"
 source "$XDG_CONFIG_HOME/zsh/scripts.sh"
 
 # History
-setopt APPEND_HISTORY
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_SPACE
+export HISTSIZE=1000000
+export SAVEHIST=1000000
+setopt INC_APPEND_HISTORY   # write to history file immediately
+setopt EXTENDED_HISTORY     # add timestamps
+setopt HIST_IGNORE_ALL_DUPS # overwrite duplicate entries
+setopt HIST_REDUCE_BLANKS   # remove superfluous blanks
+setopt HIST_IGNORE_SPACE    # ignore commands with leading space
 
 # Completion
 setopt AUTO_PARAM_SLASH

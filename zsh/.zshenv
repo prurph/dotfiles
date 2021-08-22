@@ -24,5 +24,5 @@ export FZF_CTRL_R_OPTS="--reverse"
 
 export NVIM_LISPWORDS="$XDG_CONFIG_HOME/nvim/.lispwords.lua"
 
-# For waybar trayvia lipappindicator
+# For waybar tray via lipappindicator
 export XDG_CURRENT_DESKTOP="Unity"
