@@ -39,6 +39,10 @@ ln -s "$DOTFILES/i3" "$XDG_CONFIG_HOME"
 rm -rf "$XDG_CONFIG_HOME/sway"
 ln -s "$DOTFILES/sway" "$XDG_CONFIG_HOME"
 
+# *** waybar
+rm -rf "$XDG_CONFIG_HOME/waybar"
+ln -s "$DOTFILES/waybar" "$XDG_CONFIG_HOME"
+
 # *** wofi (launcher)
 rm -rf "$XDG_CONFIG_HOME/wofi"
 ln -s "$DOTFILES/wofi" "$XDG_CONFIG_HOME"
