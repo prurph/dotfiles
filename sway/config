@@ -255,4 +255,13 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+# Screenshots
+# Requires grimshot https://github.com/swaywm/sway/blob/master/contrib/grimshot
+bindsym $mod+F4       exec grimshot --notify save screen ~/screenshots/$(date -uIs).png
+bindsym $mod+Shift+F4 exec grimshot --notify copy screen ~/screenshots/$(date -uIs).png
+bindsym $mod+F5       exec grimshot --notify save area   ~/screenshots/$(date -uIs).png
+bindsym $mod+Shift+F5 exec grimshot --notify copy area   ~/screenshots/$(date -uIs).png
+bindsym $mod+F6       exec grimshot --notify save window ~/screenshots/$(date -uIs).png
+bindsym $mod+Shift+F6 exec grimshot --notify copy window ~/screenshots/$(date -uIs).png
+
 include /etc/sway/config.d/*
