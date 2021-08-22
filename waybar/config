@@ -4,7 +4,7 @@
     "height": 27,
     "modules-left": ["sway/workspaces"],
     "modules-center": ["sway/window", "sway/mode"],
-    "modules-right": ["tray", "pulseaudio", "network", "temperature", "battery", "clock"],
+    "modules-right": ["tray", "pulseaudio", "network", "battery", "clock"],
     "sway/workspaces": {
         "disable-scroll": true,
         "disable-click": true,

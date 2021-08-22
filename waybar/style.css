@@ -24,7 +24,9 @@ window#waybar {
 }
 
 #mode {
-  color: #d08770;
+  color: #c0c5ce;
+  background-color: #d08770;
+  padding: 0 5px;
   margin-left: 25px;
   font-weight: 600;
 }
