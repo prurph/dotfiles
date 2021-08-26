@@ -83,5 +83,5 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 export MOZ_ENABLE_WAYLAND=1
 export KITTY_ENABLE_WAYLAND=1
 
-export PATH=/usr/local/racket/bin:$HOME/bin:$PATH
+export PATH=/usr/local/racket/bin:/usr/local/go/bin:$HOME/bin:$PATH
 
