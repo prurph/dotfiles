@@ -1,28 +1,22 @@
-# This tmux statusbar config was created by tmuxline.vim
-# on Thu, 04 Mar 2021
-
-# Commands to generate:
-#   1. Start vim in tmux with tmuxline.vim plugin enabled
-#   2. Configure tmuxline as desired, if at all
-#   3. Run `:TmuxlineSnapshot <snapshot-file>` to generate this file
-# Then in tmux.conf, `source <snapshot-file>`
-# More info: https://github.com/edkolev/tmuxline.vim#usage
-
 set -g status-justify "left"
 set -g status "on"
 set -g status-left-style "none"
-set -g message-command-style "fg=#a7adba,bg=#4f5b66"
-set -g status-right-style "none"
-set -g pane-active-border-style "fg=#a3be8c"
-set -g status-style "none,bg=#343d46"
-set -g message-style "fg=#a7adba,bg=#4f5b66"
+# command style is vim normal mode when entering commands
+set -g message-style "fg=#abb2bf,bg=#393f4b"
+set -g message-command-style "fg=#abb2bf,bg=#343a46"
+
+set -g pane-active-border-style "fg=#bf616a"
 set -g pane-border-style "fg=#4f5b66"
+
+set -g status-right-style "none"
+set -g status-style "none,bg=#333945"
 set -g status-right-length "100"
 set -g status-left-length "100"
+set -g status-left "#{?client_prefix,#[bg=#b48ead],#[bg=#81a1c1]}#[fg=#343a46] #S #{?client_prefix,#[fg=#b48ead],#[fg=#81a1c1]}#[bg=#464c58] #[fg=#333945]"
+set -g status-right "#{?pane_in_mode,#[fg=#464c58]#[fg=#ebcb8b]#[bg=#464c58]#[fg=#333945]#[bg=#ebcb8b] #[fg=#ebcb8b]#[bg=#393f4b] #{pane_mode} ,}#[fg=#464c58]#[fg=#b48ead,bg=#464c58]#[fg=#333945,bg=#b48ead]📆#[fg=#b48ead,bg=#3f4551] %Y-%m-%d %H:%M "
+
 setw -g window-status-activity-style "none"
 setw -g window-status-separator ""
-setw -g window-status-style "none,fg=#a3be8c,bg=#343d46"
-set -g status-left "#[fg=#2b303b,bg=#a3be8c] #S #[fg=#a3be8c,bg=#343d46,nobold,nounderscore,noitalics]"
-set -g status-right "#[fg=#4f5b66,bg=#343d46,nobold,nounderscore,noitalics]#[fg=#a7adba,bg=#4f5b66] %Y-%m-%d  %H:%M #[fg=#a3be8c,bg=#4f5b66,nobold,nounderscore,noitalics]#[fg=#2b303b,bg=#a3be8c] #h "
-setw -g window-status-format "#[fg=#a3be8c,bg=#343d46] #I #[fg=#a3be8c,bg=#343d46] #W "
-setw -g window-status-current-format "#[fg=#343d46,bg=#4f5b66,nobold,nounderscore,noitalics]#[fg=#a7adba,bg=#4f5b66] #I #[fg=#a7adba,bg=#4f5b66] #W #[fg=#4f5b66,bg=#343d46,nobold,nounderscore,noitalics]"
+setw -g window-status-style "none,fg=#a3be8c,bg=#333945"
+setw -g window-status-format "#[bg=#333945,fg=#3f4551]#[fg=#a3b38c,bg=#3f4551] #I #W #[fg=#3f4551,bg=#333945]"
+setw -g window-status-current-format "#[bg=#333945,fg=#a3b38c]#[bg=#a3b38c,fg=#343a46] #I #W#{?window_zoomed_flag, 🔍, }#[fg=#a3b38c,bg=#333945]"
