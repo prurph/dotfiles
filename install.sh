@@ -75,6 +75,7 @@ ln -sf "$DOTFILES/alacritty/alacritty.yml" "$XDG_CONFIG_HOME/alacritty/alacritty
 # *** kitty
 mkdir -p "$XDG_CONFIG_HOME/kitty"
 ln -sf "$DOTFILES/kitty/kitty.conf" "$XDG_CONFIG_HOME/kitty/kitty.conf"
+ln -sf "$DOTFILES/kitty/nord.conf" "$XDG_CONFIG_HOME/kitty/nord.conf"
 
 # *** tmux
 mkdir -p "$XDG_CONFIG_HOME/tmux"
