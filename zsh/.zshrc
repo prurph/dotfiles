@@ -12,6 +12,13 @@ znap source zsh-users/zsh-completions
 znap source zdharma/fast-syntax-highlighting
 znap prompt denysdovhan/spaceship-prompt
 
+# *** Spaceship Prompt
+export SPACESHIP_DIR_TRUNC=0 # show all folders in cwd
+export SPACESHIP_CHAR_SYMBOL="🍉 "
+export SPACESHIP_VI_MODE_INSERT="\u001b[35mI"
+export SPACESHIP_VI_MODE_NORMAL="\u001b[31mN"
+export SPACESHIP_VI_MODE_SUFFIX=" "
+
 # Prevent fast-syntax-highlighting from reversing colors
 # https://github.com/zdharma/fast-syntax-highlighting/issues/105
 # https://github.com/zdharma/fast-syntax-highlighting/issues/170
@@ -75,6 +82,12 @@ unsetopt CASE_GLOB
 if [[ $(command -v "fzf") ]]; then
   source /usr/share/fzf/completion.zsh
   source /usr/share/fzf/key-bindings.zsh
+  # Nord colors
+  export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+  --color=dark
+  --color fg:#D8DEE9,bg:#2E3440,hl:#A3BE8C,fg+:#D8DEE9,bg+:#434C5E,hl+:#A3BE8C
+  --color pointer:#BF616A,info:#4C566A,spinner:#4C566A,header:#4C566A,prompt:#81A1C1,marker:#EBCB8B
+  '
 fi
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"

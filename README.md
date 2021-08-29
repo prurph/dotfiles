@@ -16,3 +16,11 @@ $ mkinitcpio -p linux
 
 Then, if F5 and F6 are still behaving as multimedia keys, press and hold fn+k+c
 for four seconds until the keyboard crashes.
+
+## Color Emojis in Terminal
+
+This was as simple as installing a color emoji font:
+
+```shell
+$ yay -S noto-fonts-emoji
+```

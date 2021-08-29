@@ -13,7 +13,7 @@ set -g status-style "none,bg=#333945"
 set -g status-right-length "100"
 set -g status-left-length "100"
 set -g status-left "#{?client_prefix,#[bg=#b48ead],#[bg=#81a1c1]}#[fg=#343a46] #S #{?client_prefix,#[fg=#b48ead],#[fg=#81a1c1]}#[bg=#464c58] #[fg=#333945]"
-set -g status-right "#{?pane_in_mode,#[fg=#464c58]#[fg=#ebcb8b]#[bg=#464c58]#[fg=#333945]#[bg=#ebcb8b] #[fg=#ebcb8b]#[bg=#393f4b] #{pane_mode} ,}#[fg=#464c58]#[fg=#b48ead,bg=#464c58]#[fg=#333945,bg=#b48ead]📆#[fg=#b48ead,bg=#3f4551] %Y-%m-%d %H:%M "
+set -g status-right "#{?pane_in_mode,#[fg=#464c58]#[fg=#ebcb8b]#[bg=#464c58]#[fg=#333945]#[bg=#ebcb8b] #[fg=#ebcb8b]#[bg=#393f4b] #{pane_mode} ,}#[fg=#464c58]#[fg=#b48ead,bg=#464c58]#[fg=#333945,bg=#b48ead]📅 #[fg=#b48ead,bg=#3f4551] %Y-%m-%d %H:%M "
 
 setw -g window-status-activity-style "none"
 setw -g window-status-separator ""
