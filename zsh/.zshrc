@@ -14,10 +14,11 @@ znap prompt denysdovhan/spaceship-prompt
 
 # *** Spaceship Prompt
 export SPACESHIP_DIR_TRUNC=0 # show all folders in cwd
-export SPACESHIP_CHAR_SYMBOL="🍉 "
-export SPACESHIP_VI_MODE_INSERT="\u001b[35mI"
-export SPACESHIP_VI_MODE_NORMAL="\u001b[31mN"
-export SPACESHIP_VI_MODE_SUFFIX=" "
+export SPACESHIP_CHAR_SYMBOL=" "
+# ANSI codes: https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html
+export SPACESHIP_VI_MODE_INSERT="\u001b[30;45m I \u001b[35;40m\u001b[48;5;8m"
+export SPACESHIP_VI_MODE_NORMAL="\u001b[30;41m N \u001b[31;40m\u001b[48;5;8m"
+export SPACESHIP_VI_MODE_SUFFIX="\u001b[38;5;8m"
 
 # Prevent fast-syntax-highlighting from reversing colors
 # https://github.com/zdharma/fast-syntax-highlighting/issues/105
@@ -61,7 +62,6 @@ setopt HIST_IGNORE_SPACE    # ignore commands with leading space
 
 # Completion
 setopt AUTO_PARAM_SLASH
-setopt LIST_AMBIGUOUS
 setopt AUTO_LIST
 
 # znap handles `autoload -Uz compinit; compinit`
